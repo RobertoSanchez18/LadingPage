@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 body{
     margin: 0;
     min-height: 100vh;
@@ -115,14 +116,83 @@ h2{
     position: absolute;
     right: 10%;
     top: 2.5%;
-
 }
 
-.marcha {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.titulo-principal{
+    color: #FFE600;
+    position: absolute;
+    /*border: 2px solid red;*/
+    text-align: center;
+    right: 15%;
+    top: 40%;
+    font-size: 64px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    letter-spacing: 1.5px;
+    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+}   
+
+h3{
+    position: absolute;
+    top: 38%;
+    color: #FFE600;
+    right: 27%;
+    font-size: 26px;
+    text-align: center;
+    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+    letter-spacing: 1.5px;
 }
 
+.barra-amarilla{
+    position: absolute;
+    background-color: #FFE600;
+    top: 68%;
+    width: 650px;
+    height: 10px;
+    right: 14%;
+    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+}
 
+.alma-mater{
+    position: absolute;
+    color: #FFE600;
+    top: 72%;
+    font-size: 35px;
+    right: 21.5%;
+    font-weight: bold;
+    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+}
+
+.contenedor{
+    border: 2px solid greenyellow;
+    width: 100%;
+    position: absolute;
+    background: white;
+    top: 100%
+}
+
+.vision{
+    background: blue;
+    display: inline-block;
+    padding: 30px 20px 10px; 
+    margin: 15% 8%;
+    text-align: center;
+}
+
+.Mision{
+    background: violet;
+    display: inline-block;
+    padding: 10px 35px;
+    margin: 15% 8%;
+    text-align: center;
+}
+
+.valores{
+    background: green;
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 15% 8%;
+    text-align: center;
+}
 

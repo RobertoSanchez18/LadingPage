@@ -1,272 +1,199 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Ubuntu&display=swap');
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+body {
+    font-family: 'opensans', 'Helvetica Neue';
 }
 
+.menu {
+    background-color: #ED3338;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
+}
 
-body{
-    margin: 0;
-    min-height: 100vh;
-    background-image: url(/images/Background\ 451.jpg);
-    background-repeat: no-repeat;
+.logo {
+    width: 220px;
+    padding: 0 80px;
+}
+
+.menu_items {
+    display: flex;
+    list-style: none;
+    margin-right: 80px;
+    margin-top: 14px;
+}
+
+.menu_items li{
+    border-radius: 3px;
+    margin: 0px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.menu_items li a{
+    padding: 7px 13px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    color: #fff;
+}
+
+.menu_items li:hover {
+    background-color: rgba(0, 0, 0, .3);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
+}
+
+.btn_menu {
+    margin-right: 30px;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+ul.show {
+    top: 65px;
+}
+
+@media screen and (max-width: 952px){
+    .logo{
+        font-size: 30px;
+        padding-left: 35px;
+    }
+
+    .menu_items li a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 858px){
+    .menu {
+        height: 65px;
+    }
+
+    .btn_menu {
+        display: inline-flex;
+    }
+
+    .menu_items {
+        position: fixed;
+        width: 100vw;
+        height:  calc(100% - 65px);
+        background: #414141;
+        top: -100vh;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column;
+        -webkit-transition: all .4s;
+        -moz-transition: all .4s;
+        -ms-transition: all .4s;
+        -o-transition: all .4s;
+    }
+
+    .menu_items li {
+        margin: 30px 0 0 0;
+        line-height: 30px;
+    }
+
+    .menu_items li:hover {
+        background: none;
+    }
+
+    .menu_items li a {
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .menu_items li a:hover {
+        color: #ED3338;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding-left: 35px;
+    }
+}
+
+@media screen and (max-width:858px) and (orientation: landscape){
+    .menu_items li {
+        margin: 5px 0 0 0;
+    }
+
+    .menu_items {
+        overflow: scroll;
+        height: calc(100% - 65px);
+    }
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: calc(90vh - 25px);
+    background-color: #f5f5f5;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    transition: all .1s ease-in-out;
+    background-image: url('/img/Docentes.jpg');
+    animation: banner 28s infinite linear;
 }
 
-body::before {
-    content: '';
+.banner-content {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    min-height: 100vh;
-    position: absolute;
-    top: 70px;
-    left: 0;
-
-    background: linear-gradient(black,black);
-    opacity: 0.8;
-}
-
-header{
-    background-color: #B93A3A;
-    width: 100%;
-    clear: both;
-    content: '';
-    display: table;
-}
-
-.menu{
-    width: 900px;
-    margin: 0 auto;
-}
-
-.Insignia{
-    width: 70px;
-    height: 75px;
-    float: left;
-    padding: 8px;
-    position: absolute;
-    left: 12%;
-}
-
-nav{
-    float: left;
-}
-
-nav a:hover { 
-    color:#FFE600;
-}
-
-nav ul li {
-    list-style: none;
-    margin-left: 55px;
-    padding: 26px 0;
-    float: left;
-    position: relative;
-    font-size: 15px;
-    font-family:'Arvo', serif;
-    font-weight: bold;
-    
-}
-
-nav ul li a {
-    text-decoration: none;
+    height: 100%;
     color: white;
-    font-weight: bold;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-nav ul li a::before {
-    display: block;
-    content: '';
-    width: 0%;
-    background-color: #FFE600;
-    height: 5px;
-    bottom: 15px;
-    position: absolute;
-    transition: width 0.2s;
+@keyframes banner {
+    0%{
+        background-image: url('/img/Docentes.jpg')
+    }
+
+    25%{
+        background-image: url('/img/Docentes.jpg')
+    }
+    26%{
+        background-image: url('/img/banner2.jpg')
+    }
+    50%{
+        background-image: url('/img/banner2.jpg')
+    }
+    51%{
+        background-image: url('/img/banner3.jpg')
+    }
+    75%{
+        background-image: url('/img/banner3.jpg')
+    }
+    76%{
+        background-image: url('/img/banner4.jpg')
+    }
+    100%{
+        background-image: url('/img/banner4.jpg')
+    }
 }
 
-nav ul li a:hover::before {
-    width: 100%;
-
+#Reseña_Historica {
+    border: 1px solid red;  
 }
 
 h2{
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    position: absolute;
-    right: 20%;
-    top: 4%;
-}
-
-.facebook {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 15%;
-    top: 2%;
-}
-
-.youtube {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 10%;
-    top: 2.5%;
-}
-
-.titulo-principal{
-    color: #FFE600;
-    position: absolute;
-    /*border: 2px solid red;*/
-    text-align: center;
-    right: 15%;
-    top: 40%;
-    font-size: 64px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    padding: 10px 20px;
-    letter-spacing: 1.5px;
-    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
-}   
-
-h3{
-    position: absolute;
-    top: 38%;
-    color: #FFE600;
-    right: 27%;
-    font-size: 26px;
-    text-align: center;
-    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
-    letter-spacing: 1.5px;
-}
-
-.barra-amarilla{
-    position: absolute;
-    background-color: #FFE600;
-    top: 68%;
-    width: 650px;
-    height: 10px;
-    right: 14%;
-    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
-}
-
-.alma-mater{
-    position: absolute;
-    color: #FFE600;
-    top: 72%;
-    font-size: 35px;
-    right: 21.5%;
-    font-weight: bold;
-    text-shadow:-2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
-}
-
-.contenedor{
-    text-align: center;
-    border: 2px solid greenyellow;
-    width: 100%;
-    position: absolute;
-    background: white;
-    top: 100%
-}
-
-.vision{
-    background: white;
-    display: inline-block;
-    padding: 115px 15px 40px; 
-    margin: 15% 5%;
-    text-align: center;
-    color:#726E6E;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 2px;
-    line-height: 25px;
-    font-family: 'Ubuntu', sans-serif;
-    box-shadow: 0 0 10px 1px;
-}
-
-.Mision{
-    background: white;
-    display: inline-block;
-    padding: 95px 25px 40px;
-    margin: 15% 5%;
-    text-align: center;
-    color:#726E6E;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 2px;
-    line-height: 25px;
-    font-family: 'Ubuntu', sans-serif;
-    box-shadow: 0 0 10px 1px;
-}
-
-.valores{
-    background: white;
-    display: inline-block;
-    padding: 95px 60px 40px;
-    margin: 15% 5%;
-    text-align: center;
-    color:#726E6E;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 2px;
-    line-height: 25px;
-    box-shadow: 0 0 10px 1px;
-}
-
-.vision-icon{
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 220px;
-}
-
-.titulo-vision{
-    position: absolute;
-    top: 235px;
-    left: 245px;
-    font-size: 25px;
-    font-family: 'Ubuntu', sans-serif;
-    letter-spacing: 2px;
-    color: black;
-}
-
-.mision-icon{
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: 220px;
-    left: 600px;
-}
-
-.titulo-mision{
-    position: absolute;
-    top: 235px;
-    left: 660px;
-    font-size: 25px;
-    font-family: 'Ubuntu', sans-serif;
-    letter-spacing: 2px;
-    color: black;
-}
-
-.valores-icon{
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    top: 220px;
-    left: 75%;
-}
-
-.titulo-valores{
-    position:absolute;
-    font-size: 25px;
-    font-family: 'Ubuntu', sans-serif;
-    letter-spacing: 2px;
-    color: black;
-    top: 238px;
-    left: 79%;
+    
+    border: 1px solid magenta;
+    padding: 5px 10px;
+    border-bottom-right-radius: 12px;
 }
